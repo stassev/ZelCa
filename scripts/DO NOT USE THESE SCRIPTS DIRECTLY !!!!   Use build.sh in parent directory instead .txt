@@ -1,0 +1,2 @@
+DO NOT USE THESE SCRIPTS DIRECTLY!
+Use ./build.sh in the parent directory instead.
