@@ -58,7 +58,8 @@
       
     
     Warnings and more:
-    * The growth factor and rate of frowth calculations assume LCDM.
+    * The growth factor and rate of growth calculations assume spatially
+      flat cosmology.
     * Note that I never check whether input files exist, so if you get 
       segfaults, check the filenames you input.
     * The linear calculations were never intended to be fast, and the 
@@ -79,8 +80,9 @@
       integrand, leading once again to roundoff issues. The code tries 
       to minimize this effect, recasting the disconnected pieces and 
       pushing those inside the integrand of the n-pt, thus cancelling a
-      lot of contributions from |Q|>>|X|. That helps, but only to a
-      limit.
+      lot of contributions from |Q|>>|X|. This is also described in the 
+      Numerical implementation section of the paper. That trick helps, 
+      but only to some extent.
     * As an example, the code will suffer from roundoff issues at 
       redshifts (z>~4) for the 2-pts. This particular problem has a 
       somewhat trivial solution: expand the ZA 2-pt, code it up, and 
